@@ -1,7 +1,7 @@
 import Image from "next/image";
 export default function Main() {
   return (
-    <main>
+    <main className="container mx-auto px-4">
       <div className="flex justify-between h-screen md:mt-0 mt-20 items-center text-[#5B6AAB] flex-col md:flex-row">
         <div>
           <p className="md:text-8xl text-5xl">Selamat Datang</p>

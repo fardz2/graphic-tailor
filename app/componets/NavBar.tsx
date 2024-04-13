@@ -2,7 +2,7 @@ import React from "react";
 
 export default function NavBar() {
   return (
-    <header className="hidden justify-between fixed top-0 right-0 left-0  p-4  md:flex">
+    <header className="container mx-auto px-4 hidden justify-between fixed top-0 right-0 left-0  p-4  md:flex">
       <div>
         <p>Logo</p>
       </div>
