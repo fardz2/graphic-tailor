@@ -15,6 +15,7 @@ export const Fade = ({ children, initial, animate, delay }: Fade) => {
       initial={{ opacity: 0, y: initial }}
       whileInView={{ opacity: 1, y: animate }}
       viewport={{ once: true, amount: 0.5 }}
+      exit={{ opacity: 0, y: initial }}
       className="z-30"
       transition={{
         duration: 0.8,

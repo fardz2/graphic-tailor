@@ -4,7 +4,7 @@ export default function Section1() {
   return (
     <>
       <section className="relative container mx-auto px-4">
-        <div className="flex justify-between h-screen md:mt-0 mt-20 items-center   flex-col-reverse md:flex-row">
+        <div className="flex my-32 md:justify-between  md:mt-0 mt-20 items-center flex-col-reverse md:flex-row">
           <div>
             <Fade initial={-10} animate={0} delay={0.4}>
               <Image
@@ -15,14 +15,14 @@ export default function Section1() {
               />
             </Fade>
           </div>
-          <div>
+          <div className="flex flex-col gap-4 text-[#5B6AAB]">
             <Fade initial={-10} animate={0} delay={0.7}>
               {" "}
-              <p>Lorem Ipsum</p>
+              <h2 className="text-5xl font-bold ">Tentang Kami</h2>
             </Fade>
             <Fade initial={-10} animate={0} delay={0.9}>
               {" "}
-              <p className="font-bold">
+              <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Quaerat eveniet veniam necessitatibus modi iure nostrum minus
                 dolor officiis earum id impedit, ea eos omnis rem reiciendis,

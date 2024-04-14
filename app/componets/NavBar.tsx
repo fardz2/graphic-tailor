@@ -3,7 +3,7 @@ import React from "react";
 export default function NavBar() {
   return (
     <header className="container mx-auto px-4 ">
-      <div className="hidden justify-between fixed top-0 right-0 left-0  p-4 md:flex z-50 ">
+      <div className="justify-between fixed top-0 right-0 left-0  p-4 flex z-50 ">
         <div>
           <p>Logo</p>
         </div>

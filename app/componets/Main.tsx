@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { AuroraBackground } from "./ui/aurora-background";
 import { TypewriterEffect } from "./ui/typewriter-effect";
-
 import { Fade } from "./animate/Fade";
 export default function Main() {
   const words = [
@@ -15,7 +14,7 @@ export default function Main() {
   return (
     <AuroraBackground>
       <main className="container mx-auto px-4 z-10">
-        <div className="flex justify-between h-screen md:mt-0 mt-20 items-center flex-col md:flex-row text-[#5B6AAB]">
+        <div className="flex md:justify-between md:h-screen md:mt-0 mt-20 items-center flex-col md:flex-row text-[#5B6AAB]">
           <div>
             <TypewriterEffect words={words} className="text-[#5B6AAB]" />
             <Fade initial={-10} animate={0} delay={0.8}>

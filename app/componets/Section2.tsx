@@ -1,26 +1,39 @@
+import { Fade } from "./animate/Fade";
 import { Card } from "./ui/card";
 
 export default function Section2() {
   return (
     <section className="relative container mx-auto px-4 text-[#5B6AAB]">
-      <div className="h-screen">
-        <h1 className="text-center text-5xl">Our Services</h1>
+      <div className="  my-32 flex flex-col justify-center">
+        <Fade initial={-10} animate={0} delay={0.4}>
+          {" "}
+          <h1 className="text-center text-5xl font-bold">Our Services</h1>
+        </Fade>
+
         <center className="my-10">
           <div className=" h-1 w-[100px] bg-black rounded-md"></div>
         </center>
+
         <div className="flex flex-col md:flex-row justify-center gap-4 items-center">
-          <Card>
-            <h3 className="text-3xl">Menjahit</h3>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </Card>
-          <Card>
-            <h3 className="text-3xl">Membuat baju</h3>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </Card>
-          <Card>
-            <h3 className="text-3xl">Membuat celana</h3>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </Card>
+          <Fade initial={-10} animate={0} delay={0.6}>
+            <Card>
+              <h3 className="text-3xl">Menjahit</h3>
+              <p>Lorem ipsum dolor sit amet.</p>
+            </Card>
+          </Fade>
+          <Fade initial={10} animate={0} delay={0.7}>
+            {" "}
+            <Card>
+              <h3 className="text-3xl">Membuat baju</h3>
+              <p>Lorem ipsum dolor sit amet.</p>
+            </Card>
+          </Fade>
+          <Fade initial={-10} animate={0} delay={0.8}>
+            <Card>
+              <h3 className="text-3xl">Membuat celana</h3>
+              <p>Lorem ipsum dolor sit amet.</p>
+            </Card>
+          </Fade>
         </div>
       </div>
     </section>
