@@ -1,7 +1,8 @@
 import NavBar from "@/app/componets/NavBar";
 import Main from "@/app/componets/Main";
+import Section1 from "@/app/componets/Section1";
+import Section2 from "@/app/componets/Section2";
 import Image from "next/image";
-import Section1 from "./componets/Section1";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <NavBar />
       <Main />
       <Section1 />
+      <Section2 />
     </>
   );
 }
