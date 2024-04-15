@@ -18,7 +18,7 @@ export default function Section1() {
           <div className="flex flex-col gap-4 text-[#5B6AAB]">
             <Fade initial={-10} animate={0} delay={0.7}>
               {" "}
-              <h2 className="text-5xl font-bold ">Tentang Kami</h2>
+              <h2 className="md:text-5xl text-4xl font-bold ">Tentang Kami</h2>
             </Fade>
             <Fade initial={-10} animate={0} delay={0.9}>
               {" "}

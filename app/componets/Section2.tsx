@@ -6,8 +6,9 @@ export default function Section2() {
     <section className="relative container mx-auto px-4 text-[#5B6AAB]">
       <div className="  my-32 flex flex-col justify-center">
         <Fade initial={-10} animate={0} delay={0.4}>
-          {" "}
-          <h1 className="text-center text-5xl font-bold">Our Services</h1>
+          <h1 className="text-center md:text-5xl text-4xl font-bold">
+            Servis Kami
+          </h1>
         </Fade>
 
         <center className="my-10">
@@ -17,20 +18,19 @@ export default function Section2() {
         <div className="flex flex-col md:flex-row justify-center gap-4 items-center">
           <Fade initial={-10} animate={0} delay={0.6}>
             <Card>
-              <h3 className="text-3xl">Menjahit</h3>
+              <h3 className="md:text-3xl text-2xl">Menjahit Pakaian</h3>
               <p>Lorem ipsum dolor sit amet.</p>
             </Card>
           </Fade>
           <Fade initial={10} animate={0} delay={0.7}>
-            {" "}
             <Card>
-              <h3 className="text-3xl">Membuat baju</h3>
+              <h3 className="md:text-3xl text-2xl">Permak Pakaian</h3>
               <p>Lorem ipsum dolor sit amet.</p>
             </Card>
           </Fade>
           <Fade initial={-10} animate={0} delay={0.8}>
             <Card>
-              <h3 className="text-3xl">Membuat celana</h3>
+              <h3 className="md:text-3xl text-2xl">Membuat celana</h3>
               <p>Lorem ipsum dolor sit amet.</p>
             </Card>
           </Fade>

@@ -5,30 +5,31 @@ import { Fade } from "./animate/Fade";
 export default function Main() {
   const words = [
     {
-      text: "Selamat",
+      text: "Buat",
     },
     {
-      text: "Datang",
+      text: "Pakaian",
+      className: "text-[#8D72E1] ",
+    },
+    {
+      text: "Impian",
+    },
+    {
+      text: "Disini",
     },
   ];
   return (
     <AuroraBackground>
       <main className="container mx-auto px-4 z-10">
         <div className="flex md:justify-between md:h-screen md:mt-0 mt-20 items-center flex-col md:flex-row text-[#5B6AAB]">
-          <div>
+          <div className="basis-1/2">
             <TypewriterEffect words={words} className="text-[#5B6AAB]" />
             <Fade initial={-10} animate={0} delay={0.8}>
-              <p className="font-bold">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Quaerat eveniet veniam necessitatibus modi iure nostrum minus
-                dolor officiis earum id impedit, ea eos omnis rem reiciendis,
-                doloremque nulla hic provident?
-              </p>
+              <p className="mt-5">Bisa meminta permintaan yang kamu inginkan</p>
             </Fade>
           </div>
-          <div>
+          <div className="basis-5/12">
             <Fade initial={10} animate={0} delay={0.5}>
-              {" "}
               <Image
                 src={"/assets/image/gambar1.png"}
                 alt={""}
