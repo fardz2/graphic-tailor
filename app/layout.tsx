@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   ],
   authors: [
     { name: "Muhammad Faridz" },
-    { name: "Muhammad Faridz", url: "fardz2,vercel.app" },
+    { name: "Muhammad Faridz", url: "fardz2.vercel.app" },
   ],
   creator: "Muhammad Faridz",
   publisher: "Muhammad Faridz",
