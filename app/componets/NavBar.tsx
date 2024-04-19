@@ -4,9 +4,12 @@ import React, { useEffect, useState } from "react";
 import { Rotate as Hamburger } from "hamburger-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Fade } from "./animate/Fade";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 export default function NavBar() {
   const [scrolling, setScrolling] = useState<boolean>(false);
   const [show, setShow] = useState<boolean>(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,17 +44,32 @@ export default function NavBar() {
           <p>Logo</p>
         </div>
         <div className="hidden md:flex justify-between gap-9 ">
-          <p className="text-[#FEBD17]">Home</p>
-          <p>About</p>
+          <Link href={"/"}>
+            <p
+              className={cn(
+                pathname == "/" ? "text-[#FEBD17]" : "",
+                "transition"
+              )}
+            >
+              Home
+            </p>
+          </Link>
+          <Link href={"/about"}>
+            <p
+              className={cn(
+                pathname == "/about" ? "text-[#FEBD17]" : "",
+                "transition"
+              )}
+            >
+              About
+            </p>
+          </Link>
+
           <p>Service</p>
           <p>Product</p>
         </div>
         <div className="block md:hidden">
-          <Hamburger
-            onToggle={() => {
-              setShow(!show);
-            }}
-          />
+          <Hamburger toggled={show} toggle={setShow} />
         </div>
       </div>
       <AnimatePresence>
@@ -63,10 +81,28 @@ export default function NavBar() {
             exit={{ opacity: 0 }}
           >
             <Fade initial={10} animate={0} delay={0.2}>
-              <p className="text-[#FEBD17]">Home</p>
+              <Link
+                href={"/"}
+                onClick={() => {
+                  setShow(!show);
+                }}
+              >
+                <p className={cn(pathname == "/" ? "text-[#FEBD17]" : "")}>
+                  Home
+                </p>
+              </Link>
             </Fade>
             <Fade initial={10} animate={0} delay={0.3}>
-              <p>About</p>
+              <Link
+                href={"/about"}
+                onClick={() => {
+                  setShow(!show);
+                }}
+              >
+                <p className={cn(pathname == "/about" ? "text-[#FEBD17]" : "")}>
+                  About
+                </p>
+              </Link>
             </Fade>
             <Fade initial={10} animate={0} delay={0.4}>
               <p>Service</p>
