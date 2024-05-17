@@ -20,8 +20,8 @@ export default function Main() {
   ];
   return (
     <main className="container mx-auto px-5 md:px-24 z-10" id="main">
-      <div className="flex md:justify-between md:min-h-screen md:mt-0 mt-20 items-center flex-col lg:flex-row ">
-        <div className="basis-1/2">
+      <div className="flex md:justify-between justify-center min-h-screen lg:mt-0 mt-20 items-center flex-col lg:flex-row ">
+        <div className="basis-1/2 ">
           <TypewriterEffect words={words} />
           <Fade initial={-10} animate={0} delay={0.8}>
             <p className="mt-5 text-[#21383E]">
@@ -29,7 +29,7 @@ export default function Main() {
             </p>
           </Fade>
         </div>
-        <div className="basis-5/12">
+        <div className="basis-5/12 z-50">
           <div className="relative md:w-[400px]">
             <Fade initial={10} animate={0} delay={0.5}>
               <div className="overflow-hidden w-[200px]  md:w-[400px] rounded-full ">
@@ -70,7 +70,7 @@ export default function Main() {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 left-[-30px]">
+      <div className="absolute bottom-0 left-[-30px] z-20">
         <Image
           src={"/assets/element/element1.png"}
           alt={""}

@@ -26,16 +26,16 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   };
 
   return (
-    <div className="w-full h-full p-10 grid grid-cols-1 md:grid-cols-3  max-w-7xl mx-auto gap-4 relative">
+    <div className="w-full h-full p-10 grid grid-cols-2 md:grid-cols-3 mx-auto gap-4 relative">
       {cards.map((card, i) => (
-        <div key={i} className={cn(card.className, "")}>
+        <div key={i} className={cn(card.className, "md:h-[300px] h-[200px]")}>
           <motion.div
             onClick={() => handleClick(card)}
             className={cn(
               card.className,
-              "relative overflow-hidden",
+              "relative overflow-hidden ",
               selected?.id === card.id
-                ? "rounded-lg cursor-pointer absolute inset-0 h-1/2 w-full md:w-1/2 m-auto z-50 flex justify-center items-center flex-wrap flex-col"
+                ? "rounded-lg cursor-pointer absolute inset-0 h-1/2 w-4/5  md:w-1/2 m-auto z-50 flex justify-center items-center flex-wrap flex-col"
                 : lastSelected?.id === card.id
                 ? "z-40 bg-white rounded-xl h-full w-full"
                 : "bg-white rounded-xl h-full w-full"
@@ -78,7 +78,7 @@ const BlurImage = ({ card }: { card: Card }) => {
 
 const SelectedCard = ({ selected }: { selected: Card | null }) => {
   return (
-    <div className="bg-transparent h-[1000px] w-full flex flex-col justify-end rounded-lg shadow-2xl relative z-[60]">
+    <div className="bg-transparent h-full w-full flex flex-col justify-end rounded-lg shadow-2xl relative z-[60]">
       <motion.div
         initial={{
           opacity: 0,

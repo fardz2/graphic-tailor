@@ -4,7 +4,7 @@ import { Fade } from "./animate/Fade";
 export default function About() {
   return (
     <>
-      <section className="bg-[#F5F8FE] py-[100px]">
+      <section className="bg-[#F5F8FE] md:py-20 py-5">
         <div className="relative container mx-auto px-5 md:px-24  ">
           <div className="flex  md:justify-between md:mt-0 mt-20  flex-col-reverse lg:flex-row gap-5 lg:items-start items-center">
             <div className="">

@@ -36,7 +36,7 @@ export default function NavBar() {
     <header className="container mx-auto px-4  text-[#21383E]">
       <div
         className={cn(
-          "justify-between fixed top-0 right-0 left-0 items-center p-4 flex z-50 transition",
+          "justify-between fixed top-0 right-0 left-0 items-center p-4 flex z-[100] transition",
           scrolling ? "bg-white shadow-sm" : "",
           show ? "shadow-none" : ""
         )}
