@@ -17,6 +17,8 @@ export default function About() {
                     height={700}
                   />
                 </div>
+              </Fade>
+              <Fade initial={-10} animate={0} delay={0.5}>
                 <div className="overflow-hidden w-[150px] h-[150px] md:w-[300px] md:h-[300px] rounded-b-full lg:ml-[300px] ">
                   <Image
                     src={"/assets/image/sew4.jpg"}

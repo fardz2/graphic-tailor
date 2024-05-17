@@ -41,26 +41,32 @@ export default function Main() {
                 />
               </div>
             </Fade>
-            <div className="absolute top-5 right-[-50px]  md:w-[200px] md:h-[200px] w-[80px] h-[80px] rounded-full p-10 flex justify-center items-center">
-              <div className="overflow-hidden w-[80px] h-[80px] ">
-                {" "}
-                <Image
-                  src={"/assets/image/sew2.jpg"}
-                  alt={""}
-                  fill
-                  className="rounded-full"
-                />
-              </div>
+
+            <div className="absolute top-5 right-[-50px]  ">
+              <Fade initial={10} animate={0} delay={0.7}>
+                <div className="overflow-hidden md:w-[200px] md:h-[200px] w-[80px] h-[80px] rounded-full p-10 flex justify-center items-center ">
+                  {" "}
+                  <Image
+                    src={"/assets/image/sew2.jpg"}
+                    alt={""}
+                    fill
+                    className="rounded-full"
+                  />
+                </div>
+              </Fade>
             </div>
-            <div className="absolute bottom-0 left-0 bg-white  flex flex-row  justify-center items-center md:p-5 p-2 gap-2 rounded-full drop-shadow-md">
-              <div className="md:w-[50px] md:h-[50px] w-[30px] h-[30px] bg-slate-700 rounded-full flex justify-center items-center">
-                <FaGetPocket color="white" />
+
+            <Fade initial={10} animate={0} delay={0.6}>
+              <div className="absolute bottom-0 left-0 bg-white  flex flex-row  justify-center items-center md:p-5 p-2 gap-2 rounded-full drop-shadow-md">
+                <div className="md:w-[50px] md:h-[50px] w-[30px] h-[30px] bg-slate-700 rounded-full flex justify-center items-center">
+                  <FaGetPocket color="white" />
+                </div>
+                <div>
+                  <p className="text-xs">Buat pakaian mu</p>
+                  <p className="text-xs">Dengan kami</p>
+                </div>
               </div>
-              <div>
-                <p className="text-xs">Buat pakaian mu</p>
-                <p className="text-xs">Dengan kami</p>
-              </div>
-            </div>
+            </Fade>
           </div>
         </div>
       </div>
