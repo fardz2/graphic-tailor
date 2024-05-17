@@ -5,6 +5,8 @@ interface CardProps extends React.HTMLProps<HTMLDivElement> {
 }
 export const Card = ({ children }: CardProps) => {
   return (
-    <div className="bg-white rounded-xl drop-shadow-xl p-10">{children}</div>
+    <div className="bg-[#F5F8FE] rounded-xl  p-10 md:h-[350px] h-[300px]">
+      {children}
+    </div>
   );
 };

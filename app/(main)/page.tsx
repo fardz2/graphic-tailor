@@ -1,13 +1,19 @@
 import Main from "../componets/Main";
-import Section1 from "../componets/Section1";
-import Section2 from "../componets/Section2";
+import NavBar from "../componets/NavBar";
+import About from "../componets/About";
+import Service from "../componets/Service";
+import { LayoutGridDemo } from "../componets/Product";
+import Footer from "../componets/Footer";
 
 export default function Page() {
   return (
     <>
+      <NavBar />
       <Main />
-      <Section1 />
-      <Section2 />
+      <About />
+      <Service />
+      <LayoutGridDemo />
+      <Footer />
     </>
   );
 }

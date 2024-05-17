@@ -4,8 +4,10 @@ import React, { useEffect, useState } from "react";
 import { Rotate as Hamburger } from "hamburger-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Fade } from "./animate/Fade";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
+// import { Link } from "react-scroll";
+
 export default function NavBar() {
   const [scrolling, setScrolling] = useState<boolean>(false);
   const [show, setShow] = useState<boolean>(false);
@@ -14,16 +16,14 @@ export default function NavBar() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-
       scrollTop > 0 ? setScrolling(true) : setScrolling(false);
     };
-
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   useEffect(() => {
     if (show) {
       document.body.style.overflow = "hidden";
@@ -31,8 +31,9 @@ export default function NavBar() {
       document.body.style.overflow = "auto";
     }
   }, [show]);
+
   return (
-    <header className="container mx-auto px-4 text-[#5B6AAB] font-bold">
+    <header className="container mx-auto px-4  text-[#21383E]">
       <div
         className={cn(
           "justify-between fixed top-0 right-0 left-0 items-center p-4 flex z-50 transition",
@@ -44,27 +45,8 @@ export default function NavBar() {
           <p>Logo</p>
         </div>
         <div className="hidden md:flex justify-between gap-9 ">
-          <Link href={"/"}>
-            <p
-              className={cn(
-                pathname == "/" ? "text-[#FEBD17]" : "",
-                "transition"
-              )}
-            >
-              Home
-            </p>
-          </Link>
-          <Link href={"/about"}>
-            <p
-              className={cn(
-                pathname == "/about" ? "text-[#FEBD17]" : "",
-                "transition"
-              )}
-            >
-              About
-            </p>
-          </Link>
-
+          <p>Home</p>
+          <p>About</p>
           <p>Service</p>
           <p>Product</p>
         </div>
