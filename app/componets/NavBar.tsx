@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Fade } from "./animate/Fade";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 // import { Link } from "react-scroll";
 
 export default function NavBar() {
@@ -33,31 +34,38 @@ export default function NavBar() {
   }, [show]);
 
   return (
-    <header className="container mx-auto px-4  text-[#21383E]">
-      <div
+    <>
+      <header
         className={cn(
-          "justify-between fixed top-0 right-0 left-0 items-center p-4 flex z-[100] transition",
+          "fixed top-0 right-0 left-0 z-[100]",
           scrolling ? "bg-white shadow-sm" : "",
           show ? "shadow-none" : ""
         )}
       >
-        <div>
-          <p>Logo</p>
+        <div className="flex items-center p-4 transition container mx-auto px-5 md:px-24 justify-between z-50 ">
+          <div>
+            <Image
+              src={"/assets/image/logo.png"}
+              alt={""}
+              width={100}
+              height={100}
+            />
+          </div>
+          <div className="hidden md:flex justify-between gap-9 ">
+            <p>Home</p>
+            <p>About</p>
+            <p>Service</p>
+            <p>Product</p>
+          </div>
+          <div className="block md:hidden">
+            <Hamburger toggled={show} toggle={setShow} />
+          </div>
         </div>
-        <div className="hidden md:flex justify-between gap-9 ">
-          <p>Home</p>
-          <p>About</p>
-          <p>Service</p>
-          <p>Product</p>
-        </div>
-        <div className="block md:hidden">
-          <Hamburger toggled={show} toggle={setShow} />
-        </div>
-      </div>
+      </header>
       <AnimatePresence>
         {show && (
           <motion.div
-            className="fixed top-0 right-0 left-0 bottom-0 flex items-center justify-center flex-col gap-3 z-40 bg-white"
+            className="fixed top-0 right-0 left-0 bottom-0 flex items-center justify-center flex-col gap-3 z-[90] bg-white"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -95,6 +103,6 @@ export default function NavBar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }

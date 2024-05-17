@@ -26,7 +26,7 @@ export default function Footer() {
           <div>
             <p>Kontak Kami</p>
 
-            <Link href={"https://wa.me/085210687756"} target="_blank">
+            <Link href={"https://wa.me/6285210687756"} target="_blank">
               {" "}
               <div className="flex mdjustify-center justify-start items-center gap-2 hover:underline">
                 <FaWhatsapp />
