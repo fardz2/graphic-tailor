@@ -20,7 +20,7 @@ export default function Main() {
   ];
   return (
     <main className="container mx-auto px-5 md:px-24 z-10" id="main">
-      <div className="flex justify-center min-h-screen lg:mt-0 mt-20 items-center flex-col lg:flex-row ">
+      <div className="flex md:justify-center justify-start mr-10 min-h-screen lg:mt-0 mt-32 items-center flex-col lg:flex-row ">
         <div className="basis-1/2 ">
           <TypewriterEffect words={words} />
           <Fade initial={-10} animate={0} delay={0.8}>
