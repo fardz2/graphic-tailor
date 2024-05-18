@@ -70,9 +70,6 @@ export default function NavBar() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  useEffect(() => {
-    console.log(activeSection);
-  }, [activeSection]);
 
   return (
     <>
