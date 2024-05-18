@@ -1,23 +1,24 @@
 "use client";
 import { cn } from "@/utils/cn";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Rotate as Hamburger } from "hamburger-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Fade } from "./animate/Fade";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-// import { Link } from "react-scroll";
 
 export default function NavBar() {
   const [scrolling, setScrolling] = useState<boolean>(false);
   const [show, setShow] = useState<boolean>(false);
+  const [activeSection, setActiveSection] = useState<string>("");
   const pathname = usePathname();
+  const sectionsRef = useRef<{ [key: string]: IntersectionObserverEntry }>({});
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      scrollTop > 0 ? setScrolling(true) : setScrolling(false);
+      setScrolling(scrollTop > 0);
     };
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -26,18 +27,55 @@ export default function NavBar() {
   }, []);
 
   useEffect(() => {
-    if (show) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = show ? "hidden" : "auto";
   }, [show]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          sectionsRef.current[entry.target.id] = entry;
+        });
+
+        const visibleSections = Object.keys(sectionsRef.current).filter(
+          (key) => sectionsRef.current[key].isIntersecting
+        );
+
+        if (visibleSections.length > 0) {
+          setActiveSection(visibleSections[0]);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    const sections = document.querySelectorAll("section");
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setShow(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Check initial window size on mount
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <>
       <header
         className={cn(
-          "fixed top-0 right-0 left-0 z-[100]",
+          "fixed top-0 right-0 left-0 z-[100] transition",
           scrolling ? "bg-white shadow-sm" : "",
           show ? "shadow-none" : ""
         )}
@@ -52,10 +90,53 @@ export default function NavBar() {
             />
           </div>
           <div className="hidden md:flex justify-between gap-9 ">
-            <p>Home</p>
-            <p>About</p>
-            <p>Service</p>
-            <p>Product</p>
+            <Link href={"#main"}>
+              <motion.p
+                initial={{ color: "#000" }}
+                animate={{
+                  color: activeSection === "main" ? "#FEBD17" : "#000",
+                }}
+                transition={{ duration: 0.3 }}
+              >
+                Home
+              </motion.p>
+            </Link>
+
+            <Link href={"#about"}>
+              <motion.p
+                initial={{ color: "#000" }}
+                animate={{
+                  color: activeSection === "about" ? "#FEBD17" : "#000",
+                }}
+                transition={{ duration: 0.3 }}
+              >
+                About
+              </motion.p>
+            </Link>
+
+            <Link href={"#service"}>
+              <motion.p
+                initial={{ color: "#000" }}
+                animate={{
+                  color: activeSection === "service" ? "#FEBD17" : "#000",
+                }}
+                transition={{ duration: 0.3 }}
+              >
+                Service
+              </motion.p>
+            </Link>
+
+            <Link href={"#product"}>
+              <motion.p
+                initial={{ color: "#000" }}
+                animate={{
+                  color: activeSection === "product" ? "#FEBD17" : "#000",
+                }}
+                transition={{ duration: 0.3 }}
+              >
+                Product
+              </motion.p>
+            </Link>
           </div>
           <div className="block md:hidden">
             <Hamburger toggled={show} toggle={setShow} />
@@ -72,33 +153,75 @@ export default function NavBar() {
           >
             <Fade initial={10} animate={0} delay={0.2}>
               <Link
-                href={"/"}
+                href={"#home"}
                 onClick={() => {
                   setShow(!show);
                 }}
               >
-                <p className={cn(pathname == "/" ? "text-[#FEBD17]" : "")}>
+                <motion.p
+                  initial={{ color: "#000" }}
+                  animate={{
+                    color: activeSection === "main" ? "#FEBD17" : "#000",
+                  }}
+                  transition={{ duration: 0.3 }}
+                >
                   Home
-                </p>
+                </motion.p>
               </Link>
             </Fade>
             <Fade initial={10} animate={0} delay={0.3}>
               <Link
-                href={"/about"}
+                href={"#about"}
                 onClick={() => {
                   setShow(!show);
                 }}
               >
-                <p className={cn(pathname == "/about" ? "text-[#FEBD17]" : "")}>
+                <motion.p
+                  initial={{ color: "#000" }}
+                  animate={{
+                    color: activeSection === "about" ? "#FEBD17" : "#000",
+                  }}
+                  transition={{ duration: 0.3 }}
+                >
                   About
-                </p>
+                </motion.p>
               </Link>
             </Fade>
             <Fade initial={10} animate={0} delay={0.4}>
-              <p>Service</p>
+              <Link
+                href={"#service"}
+                onClick={() => {
+                  setShow(!show);
+                }}
+              >
+                <motion.p
+                  initial={{ color: "#000" }}
+                  animate={{
+                    color: activeSection === "service" ? "#FEBD17" : "#000",
+                  }}
+                  transition={{ duration: 0.3 }}
+                >
+                  Service
+                </motion.p>
+              </Link>
             </Fade>
             <Fade initial={10} animate={0} delay={0.5}>
-              <p>Product</p>
+              <Link
+                href={"#product"}
+                onClick={() => {
+                  setShow(!show);
+                }}
+              >
+                <motion.p
+                  initial={{ color: "#000" }}
+                  animate={{
+                    color: activeSection === "product" ? "#FEBD17" : "#000",
+                  }}
+                  transition={{ duration: 0.3 }}
+                >
+                  Product
+                </motion.p>
+              </Link>
             </Fade>
           </motion.div>
         )}

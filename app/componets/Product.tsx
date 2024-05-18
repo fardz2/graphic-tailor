@@ -4,7 +4,7 @@ import { LayoutGrid } from "./ui/layout-grid";
 
 export function LayoutGridDemo() {
   return (
-    <div className="h-full  w-full">
+    <section className="h-full  w-full" id="product">
       <div className=" container mx-auto md:px-24 ">
         <h1 className="text-center md:text-5xl text-4xl font-bold">
           Produk Kami
@@ -15,7 +15,7 @@ export function LayoutGridDemo() {
 
         <LayoutGrid cards={cards} />
       </div>
-    </div>
+    </section>
   );
 }
 

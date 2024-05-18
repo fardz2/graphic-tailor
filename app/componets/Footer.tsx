@@ -3,7 +3,7 @@ import { FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <section className=" bg-[#1C1C1C] text-white" id="service">
+    <section className=" bg-[#1C1C1C] text-white" id="product">
       <div className="relative container mx-auto md:p-10 p-5 md:px-24   ">
         <div className="  flex md:flex-row flex-col justify-between gap-2 ">
           <div>
