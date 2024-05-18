@@ -19,7 +19,7 @@ export default function Main() {
     },
   ];
   return (
-    <section className="container mx-auto px-5 md:px-24 z-10" id="main">
+    <section className="container mx-auto px-5 md:px-24 z-10 " id="main">
       <div className="flex md:justify-center justify-start  min-h-screen lg:mt-0 mt-32 items-center flex-col lg:flex-row ">
         <div className="basis-1/2 ">
           <TypewriterEffect words={words} />

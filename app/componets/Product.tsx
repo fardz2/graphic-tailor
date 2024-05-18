@@ -4,8 +4,8 @@ import { LayoutGrid } from "./ui/layout-grid";
 
 export function LayoutGridDemo() {
   return (
-    <section className="h-full  w-full" id="product">
-      <div className=" container mx-auto md:px-24 ">
+    <section className=" md:py-20 py-10" id="product">
+      <div className=" container mx-auto md:px-24  md:mt-0 mt-20 ">
         <h1 className="text-center md:text-5xl text-4xl font-bold">
           Produk Kami
         </h1>

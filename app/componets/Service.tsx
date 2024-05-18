@@ -29,8 +29,8 @@ export default function Service() {
     },
   ];
   return (
-    <section className="md:py-20 py-10" id="service">
-      <div className="relative container mx-auto px-5 md:px-24   ">
+    <section className="md:py-20 py-10 " id="service">
+      <div className="relative container mx-auto px-5 md:px-24  md:mt-0 mt-20  ">
         <div className="  flex flex-col justify-center  items-center">
           <Fade initial={-10} animate={0} delay={0.4}>
             <h1 className="text-center md:text-5xl text-4xl font-bold">

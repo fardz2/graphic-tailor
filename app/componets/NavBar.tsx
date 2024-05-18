@@ -64,12 +64,15 @@ export default function NavBar() {
     };
 
     window.addEventListener("resize", handleResize);
-    handleResize(); // Check initial window size on mount
+    handleResize();
 
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+  useEffect(() => {
+    console.log(activeSection);
+  }, [activeSection]);
 
   return (
     <>
@@ -80,7 +83,7 @@ export default function NavBar() {
           show ? "shadow-none" : ""
         )}
       >
-        <div className="flex items-center p-4 transition container mx-auto px-5 md:px-24 justify-between z-50 ">
+        <div className="flex items-center p-4 container mx-auto px-5 md:px-24 justify-between z-50 ">
           <div>
             <Image
               src={"/assets/image/logo.png"}
