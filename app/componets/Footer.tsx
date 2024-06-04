@@ -17,7 +17,7 @@ export default function Footer() {
               target="_blank"
             >
               <p className="hover:underline">
-                Jl. Raya Bojongsoang Raya No.243,
+                Jl. Raya Bojongsoang Raya No.237B,
                 <br /> Lengkong, Kec. Bojongsoang, Kabupaten Bandung, Jawa Barat
                 40287
               </p>
