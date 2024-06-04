@@ -36,7 +36,7 @@ export default function Footer() {
           </div>
         </div>
         <center className="mt-7">
-          <h2> &copy; 2024, Graphic tailor</h2>
+          <h2> Copyright &copy;2024, Graphic tailor</h2>
         </center>
       </div>
     </section>
